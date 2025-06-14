@@ -1,15 +1,24 @@
-import { useState } from 'react'
-import './App.css'
-import {  Routes, Route} from "react-router-dom";
-import { ClerkProviderWithRoutes } from "./auth/ClerkProviderWithRoutes";
+import "./App.css";
+import { Routes, Route } from "react-router-dom";
+import ClerkProviderWithRoutes  from "./auth/ClerkProviderWithRoutes";
+import { Layout } from "./layout/Layout";
+import { ChallengeGenerator } from "./challenge/ChallengeGenerator";
+import { HistoryPanel } from "./history/HistoryPanel";
+import { AuthenticationPage } from "./auth/AuthenticationPage";
 
 function App() {
-
-  return <ClerkProviderWithRoutes>
-<Routes>
-  
-</Routes>
-  </ClerkProviderWithRoutes>
+  return (
+    <ClerkProviderWithRoutes>
+      <Routes>
+        <Route path="/sign-in/*" element={<AuthenticationPage />} />
+        <Route path="/sign-up" element={<AuthenticationPage />} />
+        <Route element={<Layout />}>
+        <Route path="/" element={<ChallengeGenerator/>}/>
+        <Route path="/history" element={<HistoryPanel/>}/>
+        </Route>
+      </Routes>
+    </ClerkProviderWithRoutes>
+  );
 }
 
-export default App
+export default App;
