@@ -51,6 +51,7 @@ async def generate_challenge(request: ChallengeRequest, request_obj: Request, db
             correct_answer_id=challenge_data["correct_answer_id"],
             explanation=challenge_data["explanation"]
         )
+        # print("jasmina", new_challenge)
 
         quota.quota_remaining -= 1
         db.commit()

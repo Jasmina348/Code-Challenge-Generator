@@ -51,14 +51,14 @@ def generate_challenge_with_ai(difficulty: str) -> Dict[str, Any]:
 
     except Exception as e:
         print(e)
-        return {
-            "title": "Basic Python List Operation",
-            "options": [
-                "my_list.append(5)",
-                "my_list.add(5)",
-                "my_list.push(5)",
-                "my_list.insert(5)",
-            ],
-            "correct_answer_id": 0,
-            "explanation": "In Python, append() is the correct method to add an element to the end of a list."
-        }
+        # return {
+        #     "title": "Basic Python List Operation",
+        #     "options": [
+        #         "my_list.append(5)",
+        #         "my_list.add(5)",
+        #         "my_list.push(5)",
+        #         "my_list.insert(5)",
+        #     ],
+        #     "correct_answer_id": 0,
+        #     "explanation": "In Python, append() is the correct method to add an element to the end of a list."
+        # }
